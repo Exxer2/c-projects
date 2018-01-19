@@ -24,13 +24,14 @@ int main () {
 // data we actually need.
 void testRoot() {
   uid_t uid=getuid(), euid=geteuid();
-  switch (uid, euid) {
-    case (uid==0 & uid==euid) : // Check if we're actually root (0)
+    if (uid==0 & uid==euid) { // Check if we're actually root (0)
       break; //Return to Main and continue execution
-    case (uid<0 || uid!=euid) : //UID or EUID below zero or not matching could indicate compromise
+    }
+    elif (uid<0 || uid!=euid) { //UID or EUID below zero or not matching could indicate compromise
       printf("Error: \"UID\"<0 or \"UID\"!=\"EUID\". Ending. Check your user prileges.\n(You must be actual root and not running with sudo.)\n");
         printf("UID=%d, EUID=%d\n",uid,euid);
         exit(1); //Exit if that's the case
+    }
     case (uid!=0 || euid!=0) : //Notify the user that they aren't root, but everything else is good
       printf("You must perform this action as actual root, not with sudo.\n");
     default:
