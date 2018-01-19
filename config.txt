@@ -1,8 +1,8 @@
 /* (1) Enter the IPv4 network name on line 3 as XXX.XXX.XXX.XXX/XX (omitting digits as applicable).
- * (2) DO NOT DELETE OR MODIFY EITHER OF THESE LINES. */
-network = "192.168.1.0"
-#  (4) Leave this line blank. Do not add blank lines above or below.
+ * (2) DO NOT DELETE OR MODIFY LINES 1 AND 2. */
+network = "192.168.1.0/24"
+#  (4) Leave this line blank. Do not add blank lines above or below. DO NOT MODIFY THIS LINE.
 /* (5) Enter the hosts below, starting on line 7. Add new hosts on each subsequent line.
- * (6) DO NOT DELETE OR MODIFY EITHER OF THESE LINES. */
+ * (6) DO NOT DELETE OR MODIFY LINES 5 OR 6. */
  192.168.1.1
  192.168.1.2
